@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, Button } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Button, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -10,9 +10,33 @@ import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerI
 function HomeScreen({ navigation }) {
   return (
     <ImageBackground source={require('./img/mohammadreza-alidoost-sUoXs_lUhug-unsplash.jpg')} style={{width: '100%', height: '100%'}}>
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={styles.toggleTitle}>
         <Text>Home Screen</Text>
         <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} />
+      </View>
+      <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.button}
+        title="Go to Details"
+        onPress={() => navigation.navigate('Details')}
+      >
+        <Text>Go to Details</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.buttonBorder}
+        title="Go to About"
+        onPress={() => navigation.navigate('About')}
+      >
+        <Text>Go to About</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        title="Go to Stills"
+        onPress={() => navigation.navigate('Stills')}
+      >
+        <Text>Go to Stills</Text>
+      </TouchableOpacity>
+
       </View>
     </ImageBackground>
   );
@@ -20,7 +44,7 @@ function HomeScreen({ navigation }) {
 
 function DetailsScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.toggleTitle}>
       <Text>Details Screen</Text>
       <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} />
     </View>
@@ -29,7 +53,7 @@ function DetailsScreen({ navigation }) {
 
 function AboutScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.toggleTitle}>
       <Text>About</Text>
       <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} />
     </View>
@@ -38,7 +62,7 @@ function AboutScreen({ navigation }) {
 
 function StillsScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.toggleTitle}>
       <Text>Stills</Text>
       <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} />
     </View>
@@ -82,12 +106,38 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // backgroundColor: '#fff',
-    alignItems: 'center',
+    alignItems: 'stretch',
     justifyContent: 'center',
+    
   },
   title: {
     margin: 'auto',
     color: 'white',
   },
-  background: ''
+  toggleTitle: {
+    
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'space-around',
+    backgroundColor: 'white'
+  },
+  button: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    // borderStyle: 'solid',
+    // borderColor: 'white',
+    // borderWidth: '2px',
+    // borderTopColor: 'red'
+  },
+  buttonBorder: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopColor: 'white',
+    borderTopWidth: '2px',
+    borderBottomColor: 'white',
+    borderBottomWidth: '2px',
+    borderStyle: 'solid',
+  }
 });
