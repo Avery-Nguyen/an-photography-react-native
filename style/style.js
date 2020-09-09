@@ -11,13 +11,21 @@ const styles = StyleSheet.create({
   title: {
     margin: 'auto',
     color: 'white',
+    fontSize: 100,
   },
   toggleTitle: {
-    
+    // flex: 1,
     flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'space-around',
-    backgroundColor: 'white'
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: 'white',
+    height: 70,
+  },
+  toggleNav: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    height: 70,
   },
   button: {
     flex: 1,
@@ -29,10 +37,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderTopColor: 'white',
-    borderTopWidth: '2px',
+    borderTopWidth: 2,
     borderBottomColor: 'white',
-    borderBottomWidth: '2px',
+    borderBottomWidth: 2,
     borderStyle: 'solid',
+  },
+  contentText: {
+    fontSize: 30,
   }
 });
 
