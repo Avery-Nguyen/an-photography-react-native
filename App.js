@@ -1,10 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, Button, TouchableOpacity } from 'react-native';
+import { Text, View, ImageBackground, Button, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler';
-import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
+import { styles}  from './style/style'
 
 
 function HomeScreen({ navigation }) {
@@ -69,7 +68,6 @@ function StillsScreen({ navigation }) {
   );
 }
 
-const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 
@@ -85,7 +83,6 @@ function CustomDrawerContent(props) {
 function MyDrawer() {
   return (
     <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
-      {/* <Drawer.Screen name="Feed" component={Feed} /> */}
       <Drawer.Screen name="Home" component={HomeScreen} />
       <Drawer.Screen name="Details" component={DetailsScreen} />
       <Drawer.Screen name="About" component={AboutScreen} />
@@ -102,42 +99,38 @@ function MyDrawer() {
     );
   }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // backgroundColor: '#fff',
-    alignItems: 'stretch',
-    justifyContent: 'center',
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     // backgroundColor: '#fff',
+//     alignItems: 'stretch',
+//     justifyContent: 'center',
     
-  },
-  title: {
-    margin: 'auto',
-    color: 'white',
-  },
-  toggleTitle: {
+//   },
+//   title: {
+//     margin: 'auto',
+//     color: 'white',
+//   },
+//   toggleTitle: {
     
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'space-around',
-    backgroundColor: 'white'
-  },
-  button: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    // borderStyle: 'solid',
-    // borderColor: 'white',
-    // borderWidth: '2px',
-    // borderTopColor: 'red'
-  },
-  buttonBorder: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderTopColor: 'white',
-    borderTopWidth: '2px',
-    borderBottomColor: 'white',
-    borderBottomWidth: '2px',
-    borderStyle: 'solid',
-  }
-});
+//     flexDirection: 'row',
+//     alignItems: 'flex-start',
+//     justifyContent: 'space-around',
+//     backgroundColor: 'white'
+//   },
+//   button: {
+//     flex: 1,
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+//   buttonBorder: {
+//     flex: 1,
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//     borderTopColor: 'white',
+//     borderTopWidth: '2px',
+//     borderBottomColor: 'white',
+//     borderBottomWidth: '2px',
+//     borderStyle: 'solid',
+//   }
+// });
