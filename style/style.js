@@ -47,15 +47,13 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    width: null,
-    height: null,
-    // resizeMode: 'contain'
+    width: 600,
+    height: 400,
+    // resizeMode: 'contain',
+    margin: 10,
   },
   imageContainer: {
     flex: 1,
-    // height: 100,
-    // width: 100,
-    // flexDirection: 'row',
     alignItems: 'center',
     flexWrap: "wrap",
     justifyContent: 'center',
