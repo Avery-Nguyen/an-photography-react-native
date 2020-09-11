@@ -44,6 +44,21 @@ const styles = StyleSheet.create({
   },
   contentText: {
     fontSize: 30,
+  },
+  image: {
+    flex: 1,
+    width: null,
+    height: null,
+    // resizeMode: 'contain'
+  },
+  imageContainer: {
+    flex: 1,
+    // height: 100,
+    // width: 100,
+    // flexDirection: 'row',
+    alignItems: 'center',
+    flexWrap: "wrap",
+    justifyContent: 'center',
   }
 });
 
